@@ -52,6 +52,13 @@ case $IDZ_ARCH in
     IDZ_SDK_PLATFORM=iphoneos
     IDZ_IOS_VERSION=iphoneos-version-min=7.0
     ;;
+  x86_64_osx | arm64_osx )
+    IDZ_ARCH=${IDZ_ARCH/_osx/}
+    IDZ_PLATFORM=MacOSX
+    IDZ_HOST=x86_64-apple-darwin10
+    IDZ_SDK_PLATFORM=macosx
+    IDZ_IOS_VERSION=macosx-version-min=10.8
+    ;;
   * )
     echo "Unrecognised architecture $IDZ_ARCH" 
     idz_usage
